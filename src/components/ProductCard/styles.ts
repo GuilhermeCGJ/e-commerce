@@ -1,0 +1,75 @@
+import { Typography, CardContent, Box, Card, CardMedia } from '@mui/material';
+import styled from 'styled-components';
+
+export const ProductCard = styled(Card)`
+  max-width: 160px;
+  background-color: transparent;
+  border-radius: 5px;
+  position: relative;
+  width: 100%;
+
+  @media (min-width: 1024px) {
+    width: 160px;
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    width: 140px;
+  }
+
+  @media (max-width: 767px) {
+    width: 120px;
+  }
+`;
+
+export const ProductMedia = styled(CardMedia)`
+  height: 0;
+  padding-top: 75%;
+  border-radius: 5px;
+  background-color: none;
+`;
+
+export const ProductCategory = styled(Typography)`
+  color: #ff9634;
+  align-items: flex-start;
+  display: flex;
+`;
+
+export const ContentWrapper = styled(CardContent)`
+  display: flex;
+  flex-direction: column;
+  padding: 16px; /* Default padding for larger screens */
+
+  @media (max-width: 1024px) {
+    padding: 12px !important;
+  }
+
+  @media (max-width: 768px) {
+    padding: 8px !important;
+  }
+
+  @media (max-width: 480px) {
+    padding: 4px !important;
+  }
+`;
+
+export const DiscountPercentage = styled(Box)`
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: rgba(255, 150, 52, 0.8);
+  padding: 4px 8px;
+  border-radius: 0 0 0 8px;
+`;
+
+export const PriceWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8px;
+  flex-direction: row-reverse;
+`;
+
+export const OriginalPrice = styled(Typography)`
+  text-decoration: line-through;
+  color: #888;
+`;
