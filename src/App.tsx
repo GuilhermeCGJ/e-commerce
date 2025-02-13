@@ -1,5 +1,6 @@
 import './App.css';
 import ProductCard from './components/ProductCard';
+import ProductDetail from './components/ProductDetail';
 import mockProducts from './mock/products';
 import * as S from './styles';
 
@@ -12,6 +13,7 @@ function App() {
           <ProductCard key={product.id} product={product} />
         ))}
       </S.ProductsList>
+      <ProductDetail />
     </>
   );
 }

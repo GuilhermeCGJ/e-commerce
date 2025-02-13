@@ -7,6 +7,13 @@ export const ProductCard = styled(Card)`
   border-radius: 5px;
   position: relative;
   width: 100%;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+
+  &:hover {
+    transform: translateY(-5px); /* Move o card ligeiramente para cima */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra */
+  }
 
   @media (min-width: 1024px) {
     width: 160px;

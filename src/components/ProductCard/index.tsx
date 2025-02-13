@@ -1,22 +1,16 @@
 import { Typography } from '@mui/material';
 import * as S from './styles';
-
-interface Product {
-  id: number;
-  name: string;
-  category: string;
-  price: number;
-  discount_percentage?: number;
-  promotional_price?: number;
-  image: string;
-  description: string;
-}
+import { Product, useCart } from '../../hooks/cart';
 
 interface Props {
   product: Product;
 }
 
 const ProductCard = ({ product }: Props) => {
+  const { setSelectedProduct } = useCart();
+  const handleClick = () => {
+    setSelectedProduct(product);
+  };
   const handleDisplayPrice = (product: Product) => {
     if (product.promotional_price) {
       return (
@@ -46,7 +40,7 @@ const ProductCard = ({ product }: Props) => {
     );
   };
   return (
-    <S.ProductCard>
+    <S.ProductCard onClick={handleClick}>
       {product.discount_percentage && (
         <S.DiscountPercentage>
           <Typography variant="body1" fontWeight={600}>
@@ -59,7 +53,7 @@ const ProductCard = ({ product }: Props) => {
         <S.ProductCategory variant="caption">
           {product.category}
         </S.ProductCategory>
-        <Typography gutterBottom variant="body1" component="div">
+        <Typography gutterBottom variant="body2">
           {product.name}
         </Typography>
         <S.PriceWrapper>{handleDisplayPrice(product)}</S.PriceWrapper>
