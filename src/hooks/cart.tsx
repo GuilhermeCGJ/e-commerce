@@ -1,4 +1,10 @@
-import { createContext, useContext, useState, ReactNode } from 'react';
+import {
+  createContext,
+  useContext,
+  useState,
+  ReactNode,
+  useEffect
+} from 'react';
 
 export interface Product {
   id: number;
@@ -28,8 +34,15 @@ const CartContext = createContext<CartContextProps | undefined>(undefined);
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
-  const [cartProducts, setCartProducts] = useState<CartProduct[]>([]);
+  const [cartProducts, setCartProducts] = useState<CartProduct[]>(() => {
+    const storedCartProducts = localStorage.getItem('cartProducts');
+    return storedCartProducts ? JSON.parse(storedCartProducts) : [];
+  });
   const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false);
+
+  useEffect(() => {
+    localStorage.setItem('cartProducts', JSON.stringify(cartProducts));
+  }, [cartProducts]);
 
   return (
     <CartContext.Provider
