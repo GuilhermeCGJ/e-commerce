@@ -3,6 +3,7 @@ import ProductCard from './components/ProductCard';
 import ProductDetail from './components/ProductDetail';
 import mockProducts from './mock/products';
 import * as S from './styles';
+import Cart from './components/Cart';
 
 function App() {
   return (
@@ -14,6 +15,8 @@ function App() {
         ))}
       </S.ProductsList>
       <ProductDetail />
+      <h2>Itens no Carrinho</h2>
+      <Cart />
     </>
   );
 }

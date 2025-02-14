@@ -11,11 +11,15 @@ export interface Product {
   description: string;
 }
 
+export interface CartProduct extends Product {
+  quantity: number;
+}
+
 interface CartContextProps {
   selectedProduct: Product | null;
   setSelectedProduct: (product: Product | null) => void;
-  cartProducts: Product[];
-  setCartProducts: (products: Product[]) => void;
+  cartProducts: CartProduct[];
+  setCartProducts: (products: CartProduct[]) => void;
   isDrawerOpen: boolean;
   setIsDrawerOpen: (isOpen: boolean) => void;
 }
@@ -24,7 +28,7 @@ const CartContext = createContext<CartContextProps | undefined>(undefined);
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
-  const [cartProducts, setCartProducts] = useState<Product[]>([]);
+  const [cartProducts, setCartProducts] = useState<CartProduct[]>([]);
   const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false);
 
   return (
