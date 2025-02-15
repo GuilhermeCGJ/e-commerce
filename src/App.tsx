@@ -1,23 +1,20 @@
-import './App.css';
-import ProductCard from './components/ProductCard';
-import ProductDetail from './components/ProductDetail';
-import mockProducts from './mock/products';
-import * as S from './styles';
-import Cart from './components/Cart';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Template from './template';
+import Home from './pages/Home.tsx';
+import ProductDetail from './pages/ProductDetail/index.tsx';
+import Cart from './pages/Cart/index.tsx';
 
 function App() {
   return (
-    <>
-      <h1>Teste</h1>
-      <S.ProductsList>
-        {mockProducts.map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
-      </S.ProductsList>
-      <ProductDetail />
-      <h2>Itens no Carrinho</h2>
-      <Cart />
-    </>
+    <Router>
+      <Template>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/product/:id" element={<ProductDetail />} />
+          <Route path="/cart" element={<Cart />} />
+        </Routes>
+      </Template>
+    </Router>
   );
 }
 

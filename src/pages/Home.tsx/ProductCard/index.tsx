@@ -1,6 +1,7 @@
-import { Typography } from '@mui/material';
+import { CardActionArea, Typography } from '@mui/material';
 import * as S from './styles';
-import { Product, useCart } from '../../hooks/cart';
+import { Link } from 'react-router-dom';
+import { Product, useCart } from '../../../hooks/cart';
 
 interface Props {
   product: Product;
@@ -41,23 +42,25 @@ const ProductCard = ({ product }: Props) => {
   };
   return (
     <S.ProductCard onClick={handleClick}>
-      {product.discount_percentage && (
-        <S.DiscountPercentage>
-          <Typography variant="body1" fontWeight={600}>
-            -{product.discount_percentage}%
+      <CardActionArea component={Link} to={`/product/${product.id}`}>
+        {product.discount_percentage && (
+          <S.DiscountPercentage>
+            <Typography variant="body1" fontWeight={600}>
+              -{product.discount_percentage}%
+            </Typography>
+          </S.DiscountPercentage>
+        )}
+        <S.ProductMedia image={product.image} title={product.name} />
+        <S.ContentWrapper>
+          <S.ProductCategory variant="caption">
+            {product.category}
+          </S.ProductCategory>
+          <Typography gutterBottom variant="body2">
+            {product.name}
           </Typography>
-        </S.DiscountPercentage>
-      )}
-      <S.ProductMedia image={product.image} title={product.name} />
-      <S.ContentWrapper>
-        <S.ProductCategory variant="caption">
-          {product.category}
-        </S.ProductCategory>
-        <Typography gutterBottom variant="body2">
-          {product.name}
-        </Typography>
-        <S.PriceWrapper>{handleDisplayPrice(product)}</S.PriceWrapper>
-      </S.ContentWrapper>
+          <S.PriceWrapper>{handleDisplayPrice(product)}</S.PriceWrapper>
+        </S.ContentWrapper>
+      </CardActionArea>
     </S.ProductCard>
   );
 };

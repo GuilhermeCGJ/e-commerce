@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Typography, Button } from '@mui/material';
 import * as S from './styles';
-import Toast from '../Toast';
 import { useCart } from '../../hooks/cart';
+import Toast from '../../components/Toast';
 
 const ProductDetail = () => {
   const { selectedProduct, cartProducts, setCartProducts } = useCart();

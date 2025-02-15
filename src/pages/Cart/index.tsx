@@ -1,8 +1,8 @@
 import { Box, Typography, Button } from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import CartItem from '../CartItem';
-import CartSummary from '../CartSummary';
+import CartItem from './CartItem';
+import CartSummary from './CartSummary';
 import * as S from './styles';
 import { useCart } from '../../hooks/cart';
 

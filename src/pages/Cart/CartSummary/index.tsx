@@ -1,5 +1,5 @@
 import { Box, Typography, Button, Divider } from '@mui/material';
-import { useCart } from '../../hooks/cart';
+import { useCart } from '../../../hooks/cart';
 
 const CartSummary = () => {
   const { cartProducts, setCartProducts } = useCart();

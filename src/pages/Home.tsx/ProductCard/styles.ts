@@ -36,7 +36,7 @@ export const ProductMedia = styled(CardMedia)`
 `;
 
 export const ProductCategory = styled(Typography)`
-  color: #ff9634;
+  color: rgb(6, 120, 250);
   align-items: flex-start;
   display: flex;
 `;
@@ -63,7 +63,7 @@ export const DiscountPercentage = styled(Box)`
   position: absolute;
   top: 0;
   right: 0;
-  background-color: rgba(255, 150, 52, 0.8);
+  background-color: rgba(0, 204, 255, 0.8);
   padding: 4px 8px;
   border-radius: 0 0 0 8px;
 `;
