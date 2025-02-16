@@ -1,50 +1,123 @@
-# React + TypeScript + Vite
+# E-Commerce
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bem-vindo ao repositório do projeto E-Commerce! Este projeto é uma aplicação web de comércio eletrônico construída com diversas tecnologias modernas.
 
-Currently, two official plugins are available:
+## Tecnologias Utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React**: Biblioteca JavaScript para construção de interfaces de usuário.
+- **TypeScript**: Superset do JavaScript que adiciona tipagem estática.
+- **Vite**: Ferramenta de build rápida para projetos web modernos.
+- **Styled Components**: Biblioteca para estilização de componentes React utilizando CSS-in-JS.
+- **Material-UI**: Biblioteca de componentes React para um design consistente e responsivo.
+- **React Query**: Biblioteca para gerenciamento de estado assíncrono.
+- **Axios**: Cliente HTTP baseado em Promises para fazer requisições.
+- **Playwright**: Ferramenta para testes end-to-end.
+- **Jest**: Framework de testes em JavaScript.
+- **ESLint**: Ferramenta de linting para identificar e corrigir problemas no código.
 
-## Expanding the ESLint configuration
+## Instalação
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Siga os passos abaixo para configurar o projeto localmente:
 
-- Configure the top-level `parserOptions` property like this:
+1. **Clone o repositório:**
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+   ```sh
+   git clone https://github.com/seu-usuario/e-commerce.git
+   cd e-commerce
+   ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+2. **Instale as dependências:**
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+   ```bash
+   npm install
+   ```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+3. **Rodando a Aplicação:**
+
+   Para iniciar a aplicação em ambiente de desenvolvimento, utilize o comando:
+
+   ```bash
+   npm run start
+   ```
+
+   Para construir a aplicação para produção, utilize o comando:
+
+   ```bash
+   npm run build
+   ```
+
+   Para visualizar a aplicação construída, utilize o comando:
+
+   ```bash
+   npm run preview
+   ```
+
+4. **Rodando os Testes**
+
+   Testes End-to-End (E2E)
+   Para rodar os testes end-to-end, utilize o comando:
+
+   ```bash
+   npm run test:e2e
+   ```
+
+   Para rodar os testes end-to-end com interface gráfica, utilize o comando:
+
+   ```bash
+   npm run test:e2e-ui
+   ```
+
+   Para visualizar o relatório dos testes end-to-end, utilize o comando:
+
+   ```bash
+   npm run test:report
+   ```
+
+   Testes Unitários
+   Para rodar os testes unitários, utilize o comando:
+
+   ```bash
+   npm run test
+   ```
+
+   Para rodar os testes unitários em modo watch, utilize o comando:
+
+   ```bash
+   npm run test:watch
+   ```
+
+   Para gerar o relatório de cobertura dos testes unitários, utilize o comando:
+
+   ```bash
+   npm run test:coverage
+   ```
+
+   Linting
+   Para rodar o linting no projeto e identificar problemas no código, utilize o comando:
+
+   ```bash
+   npm run lint
+   ```
+
+## Estrutura do Projeto
+
+    src/: Contém o código-fonte da aplicação.
+
+    assets/: Contém os arquivos estáticos, como imagens.
+
+    Components/: Contém os componentes reutilizáveis da aplicação.
+
+    hooks/: Contém os hooks personalizados.
+
+    pages/: Contém as páginas da aplicação.
+
+    services/: Contém os serviços de API.
+
+    styles/: Contém os estilos globais e temas.
+
+    template/: Contém o layout principal da aplicação.
+
+    tests/: Contém os testes da aplicação.
+
+Licença
+Este projeto está licenciado sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
