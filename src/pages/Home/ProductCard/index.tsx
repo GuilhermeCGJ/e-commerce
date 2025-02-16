@@ -41,7 +41,7 @@ const ProductCard = ({ product }: Props) => {
     );
   };
   return (
-    <S.ProductCard onClick={handleClick}>
+    <S.Container onClick={handleClick} aria-label={`Produto ${product.name}`}>
       <CardActionArea component={Link} to={`/product/${product.id}`}>
         {product.discount_percentage && (
           <S.DiscountPercentage>
@@ -61,7 +61,7 @@ const ProductCard = ({ product }: Props) => {
           <S.PriceWrapper>{handleDisplayPrice(product)}</S.PriceWrapper>
         </S.ContentWrapper>
       </CardActionArea>
-    </S.ProductCard>
+    </S.Container>
   );
 };
 

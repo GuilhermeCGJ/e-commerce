@@ -4,7 +4,6 @@ import {
   Toolbar,
   IconButton,
   Badge,
-  Typography,
   Box,
   CircularProgress
 } from '@mui/material';
@@ -18,6 +17,7 @@ import * as S from './styles';
 import { useCart } from '../hooks/cart';
 import axiosInstance from '../services/axios';
 import { useQuery } from '@tanstack/react-query';
+import logo from '../assets/e-com-logo.svg';
 
 type Props = {
   children: React.ReactNode;
@@ -42,19 +42,15 @@ const Template = ({ children }: Props) => {
     setSearchItem(value);
     handleFilterParams({ filterBy: 'name', value });
   };
+
   return (
     <S.Container>
       <AppBar position="static">
         <Toolbar>
           <S.NavMenu>
-            <Typography
-              variant="h6"
-              component={Link}
-              to="/"
-              style={{ textDecoration: 'none', color: 'inherit' }}
-            >
-              Nome do Site
-            </Typography>
+            <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <S.Logo src={logo} alt="Logo do Site" />
+            </Link>
             <S.MenuItems>
               <S.SearchInput
                 placeholder="Pesquisar…"
@@ -66,7 +62,12 @@ const Template = ({ children }: Props) => {
               <IconButton color="inherit">
                 <AccountCircle />
               </IconButton>
-              <IconButton component={Link} to="/cart" color="inherit">
+              <IconButton
+                component={Link}
+                to="/cart"
+                color="inherit"
+                aria-label="Carrinho"
+              >
                 <Badge badgeContent={cartProducts.length} color="secondary">
                   <ShoppingCart />
                 </Badge>

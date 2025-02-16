@@ -5,9 +5,11 @@ import CartItem from './CartItem';
 import CartSummary from './CartSummary';
 import * as S from './styles';
 import { useCart } from '../../hooks/cart';
+import { useNavigate } from 'react-router-dom';
 
 const Cart = () => {
   const { cartProducts } = useCart();
+  const navigate = useNavigate();
 
   return (
     <Box>
@@ -33,6 +35,7 @@ const Cart = () => {
             variant="contained"
             color="primary"
             startIcon={<ArrowBackIcon />}
+            onClick={() => navigate('/')}
           >
             Voltar à loja
           </Button>

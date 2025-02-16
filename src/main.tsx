@@ -2,8 +2,8 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import './index.css';
-import App from './App.tsx';
-import { CartProvider } from './hooks/cart.tsx';
+import App from './App';
+import { CartProvider } from './hooks/cart';
 
 const queryClient = new QueryClient();
 

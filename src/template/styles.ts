@@ -28,5 +28,13 @@ export const SearchInput = styled(InputBase)`
 
 export const Content = styled(Box)`
   padding: 16px;
-  width: 100%;
+  width: 80&;
+`;
+
+export const Logo = styled.img`
+  height: 40px;
+
+  @media (max-width: 600px) {
+    height: 20px;
+  }
 `;
